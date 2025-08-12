@@ -1,52 +1,41 @@
-
-# Breast Cancer Prediction using Machine Learning
+# Breast Cancer Classification using Machine Learning
 
 ## 📌 Objective
-Develop a machine learning model to classify whether a tumor is **benign** or **malignant** based on various diagnostic features from breast cancer datasets.
+Build a machine learning model to classify whether a tumor is **benign** or **malignant** using the Breast Cancer Wisconsin dataset.
 
 ## 📂 Dataset
-- **Source:** [UCI Machine Learning Repository – Breast Cancer Wisconsin Dataset](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic))
-- **Features:** Mean radius, mean texture, mean perimeter, mean area, etc.
-- **Target:** Diagnosis (`M` = malignant, `B` = benign)
+- **Source:** `sklearn.datasets.load_breast_cancer()`
+- **Features:** Diagnostic measurements (mean radius, texture, perimeter, area, etc.)
+- **Target:** `0` = malignant, `1` = benign
 
 ## 🛠 Tech Stack
 - **Programming Language:** Python
-- **Libraries:** NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn
-- **ML Algorithms Tried:** Logistic Regression, Random Forest, Support Vector Machine (SVM)
-- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score, Confusion Matrix
+- **Libraries:** NumPy, Pandas, Scikit-learn
+- **Algorithm:** Logistic Regression
+- **Evaluation Metric:** Accuracy Score
 
 ## 🚀 Approach
 1. **Data Loading & Exploration**
-   - Loaded the dataset and inspected missing values & data distribution.
-   - Performed Exploratory Data Analysis (EDA) to understand feature relationships.
+   - Loaded dataset directly from Scikit-learn.
+   - Checked shape, feature names, and class distribution.
    
 2. **Data Preprocessing**
-   - Encoded categorical variables.
-   - Scaled numerical features using `StandardScaler`.
+   - Converted data to Pandas DataFrame.
+   - Split into training and test sets.
 
-3. **Model Building**
-   - Trained multiple ML models to compare performance.
-   - Selected the best model based on cross-validation accuracy.
+3. **Model Training**
+   - Used Logistic Regression to train on training data.
+   - Increased `max_iter` to ensure convergence.
 
 4. **Model Evaluation**
-   - Achieved **XX% accuracy** on the test dataset.
-   - Plotted confusion matrix and ROC curve for performance visualization.
+   - Measured accuracy score on both training and test sets.
 
 ## 📊 Results
-| Model                | Accuracy | Precision | Recall | F1-score |
-|----------------------|----------|-----------|--------|----------|
-| Logistic Regression  | 96%      | 95%       | 97%    | 96%      |
-| Random Forest        | 97%      | 96%       | 98%    | 97%      |
-| SVM                  | 96%      | 96%       | 97%    | 96%      |
+- **Training Accuracy:** ~XX%
+- **Testing Accuracy:** ~XX%
+- Model successfully classifies tumors with high accuracy.
 
-**Best Model:** Random Forest Classifier with 97% accuracy.
-
-## 📈 Visualizations
-- Feature importance chart
-- Correlation heatmap
-- ROC curve for best-performing model
-
-## 📜 How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/breast-cancer-ml.git
+## 📈 Example Output
+```python
+Accuracy on training data:  0.9494505494505494
+Accuracy on test data:  0.9298245614035088
